@@ -47,7 +47,7 @@ function getfshare() {
     var success = function (result){
         message(
             result,
-            '<strong>XONG! </strong> Copy vào trình duyệt hoạt idm để thực hiện tải file tốc độ cao...',
+            '<strong>XONG! </strong> Copy vào trình duyệt hoặc idm để thực hiện tải file tốc độ cao...',
             'alert-success'
         )
     };

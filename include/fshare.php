@@ -54,36 +54,33 @@ function getLink($fs_csrf, $fslink)
     }
 }
 
-if ($_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR']) {
-    echo 'Bác là hacker ah? Đừng làm thế mà! >.<';
-} else {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['g-recaptcha-response'])) {
-        
-        // Build POST request:
-        $recaptcha_url      = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_secret   = '6LfbK5MUAAAAAA_guWu8UjV4q9ubLpPnm230IFip';
-        $recaptcha_response = $_POST['g-recaptcha-response'];
-        
-        // Make and decode POST request:
-        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-        $recaptcha = json_decode($recaptcha);
-        
-        // Take action based on the score returned:
-        if ($recaptcha->success) {
-            $fslink  = $_POST['link'];
-            $curl    = new cURL();
-            $page    = $curl->get($fslink);
-            $fs_csrf = getFs_csrf($page);
-            login($fs_csrf);
-            $file = getlink($fs_csrf, $fslink);
-            echo $file['url'];
-        } else {
-            echo 'Sai captcha rồi! Bác là robot hả?';
-        }
-    } else {
-        echo 'Nhập captcha đi bác! Không có chơi vậy được đâu nha';
-    }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['g-recaptcha-response'])) {
     
+    // Build POST request:
+    $recaptcha_url      = 'https://www.google.com/recaptcha/api/siteverify';
+    $recaptcha_secret   = '6LfbK5MUAAAAAA_guWu8UjV4q9ubLpPnm230IFip';
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+    
+    // Make and decode POST request:
+    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+    $recaptcha = json_decode($recaptcha);
+    
+    // Take action based on the score returned:
+    if ($recaptcha->success) {
+        $fslink  = $_POST['link'];
+        $curl    = new cURL();
+        $page    = $curl->get($fslink);
+        $fs_csrf = getFs_csrf($page);
+        login($fs_csrf);
+        $file = getlink($fs_csrf, $fslink);
+        echo $file['url'];
+    } else {
+        echo 'Sai captcha rồi! Bác là robot hả?';
+    }
+} else {
+    echo 'Nhập captcha đi bác! Không có chơi vậy được đâu nha';
 }
+    
 
 ?>

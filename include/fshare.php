@@ -61,7 +61,7 @@ if ($_SERVER['SERVER_ADDR'] != $_SERVER['REMOTE_ADDR']) {
         
         // Build POST request:
         $recaptcha_url      = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_secret   = '6LcSJ5MUAAAAABsFNkkgsLI0gjzhMEFE99fCGMQ1';
+        $recaptcha_secret   = '6LfbK5MUAAAAAA_guWu8UjV4q9ubLpPnm230IFip';
         $recaptcha_response = $_POST['g-recaptcha-response'];
         
         // Make and decode POST request:

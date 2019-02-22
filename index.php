@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
     <div class="container">
@@ -39,6 +39,14 @@
                 </div>
             </div>
         </div>
+		 <div class="row" style = "margin-top: 18px;">
+            <div class="col-8 offset-md-4">
+                <div class="col-12 input-group">
+                   <div class="g-recaptcha" data-sitekey="6LcSJ5MUAAAAAIpQu6x_kNZeZupwHPqANolF1Ivt"></div>
+                </div>
+            </div>
+        </div>
+		
         <br/>
         <div class="alert text-center" role="alert">
 

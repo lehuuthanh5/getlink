@@ -42,12 +42,13 @@ $(document).ready(function(){
 function getfshare() {
     var url = "include/fshare.php";
     var data = {
-        link : $('#link').val()
+        'link': $('#link').val(), 
+		'g-recaptcha-response': $('#g-recaptcha-response').val()
     };
     var success = function (result){
         message(
             result,
-            '<strong>XONG! </strong> Copy vào trình duyệt hoạt idm để thực hiện tải file tốc độ cao...',
+            '<strong>XONG! </strong> Copy vào trình duyệt hoặc idm để thực hiện tải file tốc độ cao...',
             'alert-success'
         )
     };

@@ -4,7 +4,7 @@ $(document).ready(function(){
 
         //Regex pattern
         var plink = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-        var pfshare = /^https:\/\/www\.fshare\.vn\/file\/[A-Za-z0-9_.]+$/g;
+        var pfshare = /^https:\/\/www\.fshare\.vn\/file\/[A-Za-z0-9_.]+.$/g;
 
         //Loading button
         $('#btn-getlink').button('loading');

@@ -42,7 +42,7 @@
 		 <div class="row" style = "margin-top: 18px;">
             <div class="col-8 offset-md-4">
                 <div class="col-12 input-group">
-                   <div class="g-recaptcha" data-sitekey="6LcSJ5MUAAAAAIpQu6x_kNZeZupwHPqANolF1Ivt" data-callback="enableBtn"></div>
+                   <div class="g-recaptcha" data-sitekey="6LfbK5MUAAAAAL5aOTlbuaNjM7yj8TbBDJYCinzV" data-callback="enableBtn"></div>
                 </div>
             </div>
         </div>

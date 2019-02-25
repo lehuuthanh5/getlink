@@ -22,10 +22,13 @@ function getIdFshareUrl($url)
 
 function login($fs_csrf)
 {
-    $acc_user = 'tmpfshare9@gmail.com';
+	$acc_users = array('tmpfshare9@gmail.com');
+	$acc_passes = array('Vip.taimienphi.vn9');
     global $curl;
     $curl      = new cURL();
-    $acc_pass  = 'Vip.taimienphi.vn9';
+	$index = rand(0, count($acc_users) - 1);
+    $acc_pass  = $acc_passes[$index];
+	$acc_user = $acc_users[$index];
     $login_url = "https://www.fshare.vn/site/login";
     $dataLogin = "_csrf-app=" . urlencode($fs_csrf) . "&LoginForm%5Bemail%5D=" . urlencode($acc_user) . "&LoginForm%5Bpassword%5D=" . urlencode($acc_pass) . "&LoginForm%5BrememberMe%5D=0";
     $html      = $curl->post($login_url, $dataLogin);
